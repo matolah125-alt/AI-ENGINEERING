@@ -1,6 +1,8 @@
 """
 Day 01: Hello Engineering!
 A mini progress-tracker built with clear validation boundaries and accurate specifications.
+
+Part of my AI Software Engineering Journey.
 """
 
 
