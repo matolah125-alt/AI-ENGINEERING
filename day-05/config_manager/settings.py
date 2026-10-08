@@ -1,6 +1,8 @@
 from dotenv import load_dotenv
 import os
 
+load_dotenv()
+
 
 def get_app_name() -> str:
 	return os.getenv("APP_NAME", "AI Engineering App")
