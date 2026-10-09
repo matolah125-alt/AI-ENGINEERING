@@ -6,6 +6,7 @@ import requests
 from api_client.client import get_user
 
 
+# Successful responses and HTTP error handling
 @pytest.mark.parametrize(
     ("user_id", "expected_user"),
     [
@@ -55,6 +56,7 @@ def test_get_user_server_error():
         )
 
 
+# Network failures and request timeouts
 def test_get_user_connection_error():
     with patch("api_client.client.requests.get") as mock_get:
         mock_get.side_effect = requests.exceptions.ConnectionError()
@@ -81,6 +83,7 @@ def test_get_user_timeout():
         )
 
 
+# Invalid IDs are rejected before a request is sent
 @pytest.mark.parametrize(
     ("user_id", "error_type"),
     [
@@ -98,6 +101,7 @@ def test_get_user_invalid_id_does_not_make_request(user_id, error_type):
         mock_get.assert_not_called()
 
 
+# Confirm that callers can override the configured API host
 def test_get_user_uses_custom_api_base_url(monkeypatch):
     monkeypatch.setenv("API_BASE_URL", "https://api.example.com")
 

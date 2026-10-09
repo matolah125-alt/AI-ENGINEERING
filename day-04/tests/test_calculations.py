@@ -3,6 +3,7 @@ import pytest
 from learning_tracker.calculations import calculate_progress
 
 
+# Calculation results, the upper cap, and invalid targets
 def test_calculate_progress_basic_calculation():
 	assert calculate_progress(3, 12) == 25.0
 

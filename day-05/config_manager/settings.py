@@ -1,9 +1,11 @@
 from dotenv import load_dotenv
 import os
 
+# Load local environment settings before configuration is read
 load_dotenv()
 
 
+# Read and validate application settings
 def get_app_name() -> str:
 	return os.getenv("APP_NAME", "AI Engineering App")
 

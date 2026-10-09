@@ -4,6 +4,7 @@ from pathlib import Path
 from app_logger.logger import get_logger
 
 
+# Logger creation and configuration
 def test_get_logger_returns_logger():
     logger = get_logger("test_app")
 
@@ -22,6 +23,7 @@ def test_get_logger_adds_file_handler():
     assert len(logger.handlers) == 1
 
 
+# File output, formatting, and log levels
 def test_logger_writes_to_file(tmp_path):
     log_file = tmp_path / "app.log"
     logger = get_logger("file_test", log_file=log_file)

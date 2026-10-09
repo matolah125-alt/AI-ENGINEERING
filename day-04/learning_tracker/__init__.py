@@ -1,0 +1,1 @@
+"""Reusable validation and progress-calculation functions."""

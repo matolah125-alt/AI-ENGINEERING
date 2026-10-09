@@ -10,6 +10,7 @@ from database.records import (
 )
 
 
+# Table creation
 def test_create_records_table():
     connection = get_connection(":memory:")
 
@@ -31,6 +32,7 @@ def test_create_records_table():
         connection.close()
         
         
+# Record creation and retrieval
 def test_add_record_returns_generated_id():
     connection = get_connection(":memory:")
 
@@ -78,6 +80,7 @@ def test_get_records_returns_saved_records():
         connection.close()
         
         
+# SQLite-level constraints
 def test_database_rejects_progress_above_100():
     connection = get_connection(":memory:")
 
@@ -118,6 +121,7 @@ def test_database_rejects_negative_progress():
         connection.close()
         
         
+# Input validation when adding records
 @pytest.mark.parametrize(
     ("month", "error_type"),
     [
@@ -232,6 +236,7 @@ def test_add_record_rejects_invalid_status(status, error_type):
         connection.close()
         
         
+# Updating records and validating record IDs
 def test_update_record_changes_saved_record():
     connection = get_connection(":memory:")
     try:
@@ -310,6 +315,7 @@ def test_update_record_rejects_invalid_id(record_id, error_type):
         connection.close()
         
         
+# Deleting records
 def test_delete_record_removes_saved_record():
     connection = get_connection(":memory:")
     try:
@@ -343,6 +349,7 @@ def test_delete_record_returns_false_for_missing_id():
         connection.close()
 
 
+# Input validation when updating records
 @pytest.mark.parametrize(
     ("record_id", "error_type"),
     [

@@ -3,6 +3,7 @@ import pytest
 from progress_tracker import calculate_progress
 
 
+# Calculation examples, boundary cases, and invalid-input checks
 def test_calculate_progress_basic():
     assert calculate_progress(3, 12) == 25.0
 

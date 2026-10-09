@@ -3,6 +3,7 @@ import sqlite3
 from database.connection import DATABASE_PATH, get_connection
 
 
+# Connection behavior and default database path
 def test_get_connection_returns_sqlite_connection(tmp_path):
     database_path = tmp_path / "test.db"
 

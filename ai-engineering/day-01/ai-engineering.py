@@ -6,6 +6,7 @@ Part of my AI Software Engineering Journey.
 """
 
 
+# Calculate progress under the learning-goal rules
 def calculate_progress(current_month: int, target_months: int) -> float:
     """
     Calculates learning progress as a percentage capped at 100.0%.
@@ -27,6 +28,7 @@ def calculate_progress(current_month: int, target_months: int) -> float:
     return round(capped_percentage, 1)
 
 
+# Collect required profile details
 def get_valid_name() -> str:
     """Prompts for user's name and ensures it isn't left blank."""
     while True:
@@ -45,6 +47,7 @@ def get_valid_interest() -> str:
         print("❌ Oops! Please share a short thought about your interest.\n")
 
 
+# Parse numeric responses and reject invalid input
 def get_non_negative_integer(prompt: str) -> int:
     """
     Safely prompts for a non-negative integer (>= 0).
@@ -64,6 +67,7 @@ def get_non_negative_integer(prompt: str) -> int:
             print("❌ Invalid input! Please enter a whole number (e.g., 0, 3, 6, 12).\n")
 
 
+# Run the interactive learning-progress flow
 def main() -> None:
     print("=" * 50)
     print("Welcome to your AI & Software Engineering Journey!")

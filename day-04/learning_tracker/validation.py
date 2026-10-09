@@ -1,3 +1,4 @@
+# Enforce the shared month-value rule
 def validate_month(month: int) -> int:
 	"""Return a non-negative month value or raise ValueError."""
 	if month < 0:

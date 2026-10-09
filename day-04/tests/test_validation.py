@@ -3,6 +3,7 @@ import pytest
 from learning_tracker.validation import validate_month
 
 
+# Accepted month values and negative-value rejection
 def test_validate_month_returns_positive_month():
 	assert validate_month(5) == 5
 

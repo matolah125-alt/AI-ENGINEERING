@@ -1,6 +1,7 @@
 from config import get_api_base_url
 
 
+# API URL environment override and default
 def test_get_api_base_url_uses_environment_variable(monkeypatch):
     monkeypatch.setenv("API_BASE_URL", "https://api.example.com")
 

@@ -2,6 +2,7 @@ import logging
 from pathlib import Path
 
 
+# Configure a named logger and its file output
 def get_logger(
     name: str, log_file: str | Path | None = None
 ) -> logging.Logger:

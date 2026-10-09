@@ -1,6 +1,7 @@
 from learning_tracker.validation import validate_month
 
 
+# Validate inputs before calculating capped progress
 def calculate_progress(current_month: int, target_months: int) -> float:
 	"""Calculate capped learning progress as a percentage."""
 	current_month = validate_month(current_month)

@@ -1,6 +1,7 @@
 import sqlite3
 
 
+# Table setup
 def create_records_table(connection: sqlite3.Connection) -> None:
     """Create the learning records table if it does not exist."""
     connection.execute(
@@ -17,6 +18,7 @@ def create_records_table(connection: sqlite3.Connection) -> None:
     
     
 
+# Insert a validated record
 def add_record(
     connection: sqlite3.Connection,
     month: int,
@@ -56,6 +58,7 @@ def add_record(
     return cursor.lastrowid
 
 
+# List records in insertion order
 def get_records(
     connection: sqlite3.Connection,
 ) -> list[tuple]:
@@ -70,6 +73,7 @@ def get_records(
     return cursor.fetchall()
 
 
+# Validate and update an existing record
 def update_record(
     connection: sqlite3.Connection,
     record_id: int,
@@ -118,6 +122,7 @@ def update_record(
     return cursor.rowcount > 0
 
 
+# Remove a record
 def delete_record(
     connection: sqlite3.Connection,
     record_id: int,

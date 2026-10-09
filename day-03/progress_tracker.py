@@ -1,3 +1,4 @@
+# Progress calculation with input checks and a 100% cap
 def calculate_progress(current_month: int, target_months: int) -> float:
     """
     Calculate learning progress as a percentage capped at 100.0%.

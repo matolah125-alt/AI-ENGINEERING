@@ -3,6 +3,7 @@ import pytest
 from config_manager.settings import get_app_environment, get_app_name
 
 
+# Application-name defaults and overrides
 def test_get_app_name_returns_environment_value(monkeypatch):
 	monkeypatch.setenv("APP_NAME", "My AI App")
 
@@ -15,6 +16,7 @@ def test_get_app_name_returns_default_when_app_name_is_missing(monkeypatch):
 	assert get_app_name() == "AI Engineering App"
 
 
+# Environment-name defaults, supported values, and invalid values
 def test_get_app_environment_returns_environment_value(monkeypatch):
 	monkeypatch.setenv("APP_ENV", "production")
 

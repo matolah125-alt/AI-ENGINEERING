@@ -22,6 +22,7 @@ The project is intentionally educational and beginner-friendly: each exercise de
 - [day-05](day-05) — configuration manager using environment variables and `.env`
 - [day-06](day-06) — reusable application logger with file output and formatting
 - [day-07](day-07) — configurable API client with input validation and mocked HTTP tests
+- [day-08](day-08) — SQLite persistence with validated learning-record operations
 
 ## Daily project highlights
 
@@ -77,6 +78,18 @@ Key files:
 - [day-07/tests/test_settings.py](day-07/tests/test_settings.py)
 - [day-07/tests/test_client.py](day-07/tests/test_client.py)
 
+### Day 08 — SQLite and Database Persistence
+
+This exercise stores learning records in SQLite. The connection module selects
+the database file, while the records module creates the table and implements
+validated create, read, update, and delete operations.
+
+Key files:
+- [day-08/database/connection.py](day-08/database/connection.py)
+- [day-08/database/records.py](day-08/database/records.py)
+- [day-08/tests/test_connection.py](day-08/tests/test_connection.py)
+- [day-08/tests/test_records.py](day-08/tests/test_records.py)
+
 ## Running the exercises
 
 Each folder is designed to be run or tested independently.
@@ -100,6 +113,11 @@ pytest -q
 
 ```bash
 cd day-07
+pytest -q
+```
+
+```bash
+cd day-08
 pytest -q
 ```
 
