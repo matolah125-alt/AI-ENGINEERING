@@ -4,3 +4,6 @@ __pycache__/
 .coverage
 .env
 *.log
+
+# Local SQLite database files
+*.db
